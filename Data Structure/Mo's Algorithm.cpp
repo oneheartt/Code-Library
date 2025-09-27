@@ -4,7 +4,7 @@ struct q_data{
         id = i;
         cin >> l >> r;
     }
-    bool operator(const q_data &other) const{
+    bool operator < (const q_data &other) const{
         if(l/sz == other.l/sz) return r < other.r;
         return l/sz < other.l/sz;
     }
