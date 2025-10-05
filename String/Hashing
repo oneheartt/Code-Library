@@ -1,0 +1,19 @@
+struct Hash{
+    vector<ll> h, powbase;
+    ll mod;
+    int n;
+    void init(int n, ll a[maxN], ll mod){
+        this->n = n;
+        this->mod = mod;
+        h.resize(n+2,0);
+        powbase.resize((int)2e5+2,0);
+        powbase[0] = 1;
+        rep(i,1,/*sz*/) powbase[i] = powbase[i-1] * base % mod;
+        rep(i,1,n) h[i] = (h[i-1] + powbase[i-1] * a[i] % mod) % mod;
+    }
+    ll gethash(int l, int r){
+        ll ans = (h[r] - h[l-1])%mod;
+        ans += mod; ans %= mod;
+        return ans * powbase[(int)2e5 - l + 1] % mod;
+    }
+};
