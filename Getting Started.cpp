@@ -50,6 +50,7 @@
  
 #include<bits/stdc++.h>
 #define ll long long
+#define int ll
 #define endl '\n'
 #define rep(i,a,b) for(int i=a; i<=b; ++i)
 #define rev(i,a,b) for(int i=a; i>=b; --i)
@@ -59,11 +60,11 @@
 #define pii pair<int,int>
 using namespace std;
 const ll inf = 1e9 + 7;
-const ll moreinf = 1e16 + 7;
+const ll moreinf = 1e15 + 7;
 const ll base = 256;
-const int sz = 300;
+const ll sz = 447;
 
-const ll MOD[] = {(1ll<<31)-1, (ll)1e9 +22071997};
+const ll MOD[] = {(ll)1e9 + 7, (ll)1e9 +22071997, (ll)1e9 + 9};
  
 inline ll CELL(ll a, ll b){return a/b + (a%b>0);}
 inline ll FLOOR(ll a, ll b){return a/b - (a%b<0);}
@@ -73,23 +74,23 @@ template<typename T> inline void setmax(T &a, const T &b){if(a < b) a = b;}
  
 const int maxN = 1e5+7;
 
+inline ll addmod(ll a, ll b){a += b;if(a > inf) a -= inf;return a;}
+inline ll submod(ll a, ll b){a -= b;if(a < 0) a += inf;return a;}
+inline ll mulmod(ll a, ll b){a *= b;a%= inf;return a;}
+
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 
-ll rand(ll a, ll b){
-    return uniform_int_distribution<ll>(a, b)(rng);
-}
-
-signed main(){  
+signed main(){   
     ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);  
     if(fopen("code.inp","r")){
         freopen("code.inp","r",stdin);
         freopen("code.out","w",stdout);
     }
-    if(fopen("island.in","r")){
-        freopen("island.in","r",stdin);
-        freopen("island.out","w",stdout);
+    if(fopen("and.inp","r")){
+        freopen("and.inp","r",stdin);
+        freopen("and.out","w",stdout);
     }
-
+    
     cerr << endl << "Time elapsed: " << 1.0 * clock() / CLOCKS_PER_SEC << " s.\n";
     return 0;
 }
